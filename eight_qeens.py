@@ -38,13 +38,12 @@ def solve(M,pos,step):
             if M[i][j]=="":
                 M2=Fill(M,i,j)
                 if step==8:
-                    print(pos+[(i,j)])
-                    #return pos+[(i,j)]
+                    #print(pos+[(i,j)])
+                    return pos+[(i,j)]
                 else:
                     S=solve(M2,pos+[(i,j)],step+1)
                     if S:
-                        pass
-                        #return S
+                        return S
     return False
 Map= [[""]*8 for i in range(8)]
 positions = solve(Map,[],1)
